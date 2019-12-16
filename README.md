@@ -1,0 +1,2 @@
+# dotNETCore_LoadAssemblyPractice
+.NETCoreのdll動的読み込みの実装確認
