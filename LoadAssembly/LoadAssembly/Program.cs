@@ -24,7 +24,7 @@ namespace LoadAssembly
     }
 
     /// <summary>
-    /// クラスインスタンスのメソッドを呼び出し
+    /// クラスインスタンスのメソッドを実行
     /// </summary>
     /// <param name="a">読み込んだアセンブリ</param>
     static void callClassMethod(Assembly a)
