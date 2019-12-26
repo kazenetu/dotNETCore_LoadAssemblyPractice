@@ -9,4 +9,8 @@
     <Exec Command="cd $(SolutionDir) &#xD;&#xA;dotnet publish -c Release ../LoadTarget/LoadTarget/LoadTarget.csproj -o $(TargetDir)" />
   </Target>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Interface\Interface\Interface.csproj" />
+  </ItemGroup>
+
 </Project>
