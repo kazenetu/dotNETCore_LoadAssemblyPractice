@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interface;
+using System;
 using System.IO;
 using System.Reflection;
 
@@ -18,6 +19,9 @@ namespace LoadAssembly
 
       // クラスインスタンスのメソッド呼び出し
       callClassMethod(a);
+
+      // インターフェースのメソッドを実行
+      callInterfaceMethod(a);
 
       // dllアセンブリを解放
       alc.Unload();
@@ -41,5 +45,22 @@ namespace LoadAssembly
       Console.WriteLine($"testMethod call:[{testMethod.Invoke(instance, null)}]");
 
     }
+
+    /// <summary>
+    /// インターフェースのメソッドを実行
+    /// </summary>
+    /// <param name="a">読み込んだアセンブリ</param>
+    static void callInterfaceMethod(Assembly a)
+    {
+
+      // 対象クラスのインスタンス生成
+      var type = a.GetType("LoadTarget.TestClass");
+      var instance = Activator.CreateInstance(type) as ITestClass;
+
+      // メソッド呼び出し(戻り値 string)
+      Console.WriteLine($"HelloWorld call:[{instance.HelloWorld()}]");
+
+    }
+
   }
 }
