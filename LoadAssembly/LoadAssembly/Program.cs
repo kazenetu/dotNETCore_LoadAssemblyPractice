@@ -60,6 +60,9 @@ namespace LoadAssembly
       // メソッド呼び出し(戻り値 string)
       Console.WriteLine($"HelloWorld call:[{instance.HelloWorld()}]");
 
+      // リスト系メソッド呼び出し(戻り値 string)
+      Console.WriteLine($"GetList call:[{string.Join(" , ", instance.GetList())}]");
+
     }
 
   }
