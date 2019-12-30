@@ -1,6 +1,17 @@
 # dotNETCore_LoadAssemblyPractice
 .NETCoreのdll動的読み込みの実装確認
 
+## ビルド方法
+* VisualStudio(2019以降)
+   1. LoadAssembly/LoadAssembly.slnを開く
+   1. 実行する
+
+* dotnetコマンド(3.1以上)  
+    ```sh
+    cd LoadAssembly/LoadAssembly
+    dotnet run
+    ```
+
 ## dll読み込み実績の種類と詳細
 * クラスインスタンスのメソッド実行  
   クラスインスタンスを取得し  
