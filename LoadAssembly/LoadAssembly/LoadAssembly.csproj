@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cd $(SolutionDir) &#xD;&#xA;dotnet publish -c Release ../LoadTarget/LoadTarget/LoadTarget.csproj -o $(TargetDir)" />
+    <Exec Command="cd ../ &#xD;&#xA;dotnet publish -c Release ../LoadTarget/LoadTarget/LoadTarget.csproj -o $(TargetDir)" />
   </Target>
 
   <ItemGroup>
