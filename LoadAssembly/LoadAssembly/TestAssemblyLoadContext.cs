@@ -3,7 +3,7 @@ using System.Runtime.Loader;
 
 namespace LoadAssembly
 {
-  class TestAssemblyLoadContext : AssemblyLoadContext
+  public class TestAssemblyLoadContext : AssemblyLoadContext
   {
     public TestAssemblyLoadContext() : base(isCollectible: true)
     {
