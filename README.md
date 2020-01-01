@@ -3,12 +3,12 @@
 
 ## ビルド方法
 * VisualStudio(2019以降)
-   1. LoadAssembly/LoadAssembly.slnを開く
+   1. example/ConsoleSample/ConsoleSample.slnを開く
    1. 実行する
 
 * dotnetコマンド(3.1以上)  
     ```sh
-    cd LoadAssembly/LoadAssembly
+    cd example/ConsoleSample/ConsoleSample
     dotnet run
     ```
 
