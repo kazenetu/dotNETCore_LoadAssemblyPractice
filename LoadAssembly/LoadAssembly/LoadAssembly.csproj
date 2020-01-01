@@ -1,16 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
   </PropertyGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cd ../ &#xD;&#xA;dotnet publish -c Release ../LoadTarget/LoadTarget/LoadTarget.csproj -o $(TargetDir)" />
-  </Target>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Interface\Interface\Interface.csproj" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="cd ../ &#xD;&#xA;dotnet publish -c Release ../LoadTarget/LoadTarget/LoadTarget.csproj -o $(TargetDir)" />
+  </Target>
 
 </Project>
