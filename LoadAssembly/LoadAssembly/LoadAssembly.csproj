@@ -11,8 +11,4 @@
     <ProjectReference Include="..\..\Interface\Interface\Interface.csproj" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cd ../ &#xD;&#xA;dotnet publish -c Release ../LoadTarget/LoadTarget/LoadTarget.csproj -o $(TargetDir)" />
-  </Target>
-
 </Project>
