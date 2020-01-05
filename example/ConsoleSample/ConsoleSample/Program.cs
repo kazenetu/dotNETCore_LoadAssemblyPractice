@@ -21,11 +21,12 @@ namespace LoadAssembly
       // クラスインスタンスのメソッド呼び出し
       callClassMethod(a);
 
-      // インターフェースのメソッドを実行
-      callInterfaceMethod(a);
-
       // dllアセンブリを解放
       alc.Unload();
+
+      // インターフェースのメソッドを実行
+      callInterfaceMethod(assemblyPath);
+
     }
 
     /// <summary>
@@ -50,11 +51,18 @@ namespace LoadAssembly
     /// <summary>
     /// インターフェースのメソッドを実行
     /// </summary>
-    /// <param name="a">読み込んだアセンブリ</param>
-    static void callInterfaceMethod(Assembly a)
+    /// <param name="filePath">アセンブリのファイルパス</param>
+    static void callInterfaceMethod(string filePath)
     {
+
+      // アセンブリローダーのインスタンス取得
+      var loader = new AssemblyLoader();
+
+      // アセンブリ読み込み
+      loader.Load(filePath);
+
       // 対象クラスのインスタンス取得
-      var instance = GetInterfaceInstance<ITestClass>(a);
+      var instance = loader.GetInterfaceInstance<ITestClass>();
       if (instance is null)
       {
         // 取得できない場合は終了
@@ -70,34 +78,5 @@ namespace LoadAssembly
 
     }
 
-    /// <summary>
-    /// インターフェースインスタンス取得
-    /// </summary>
-    /// <typeparam name="T">インターフェース</typeparam>
-    /// <param name="assembly">読み込んだアセンブリ</param>
-    /// <returns>インターフェースインスタンスまたはnull</returns>
-    static T GetInterfaceInstance<T>(Assembly assembly) where T : class
-    {
-      // 対象インターフェース名取得
-      var typeName = typeof(T).FullName;
-
-      // アセンブリからインターフェースを継承したクラスのTypeリストを取得
-      var targets = assembly.GetTypes().Where(typeItem => typeItem.IsClass && typeItem.GetInterface(typeName) != null);
-      if (!targets.Any())
-      {
-        return null;
-      }
-
-      // 最初のクラスTypeを取得
-      var type = assembly.GetType(targets.First().FullName);
-      if (type is null)
-      {
-        return null;
-
-      }
-
-      // インスタンスを返す
-      return Activator.CreateInstance(type) as T;
-    }
   }
 }
