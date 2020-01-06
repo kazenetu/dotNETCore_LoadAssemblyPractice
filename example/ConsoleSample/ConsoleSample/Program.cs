@@ -56,7 +56,7 @@ namespace ConsoleSample
     {
 
       // アセンブリローダーのインスタンス取得
-      var loader = new AssemblyLoader();
+      var loader = AssemblyLoaderSingleton.GetInstance();
 
       // アセンブリ読み込み
       loader.Load(filePath);
