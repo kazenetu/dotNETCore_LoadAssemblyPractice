@@ -7,7 +7,7 @@ namespace LoadAssembly
   /// <summary>
   /// アセンブリの読み込みを管理するクラス
   /// </summary>
-  public class AssemblyLoader
+  public class AssemblyLoader: IAssemblyLoader
   {
     /// <summary>
     /// 読み込み済みアセンブリType
