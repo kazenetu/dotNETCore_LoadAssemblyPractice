@@ -5,7 +5,7 @@ using System.Linq;
 namespace LoadAssembly
 {
   /// <summary>
-  /// アセンブリの読み込みを管理するクラス
+  /// アセンブリ読み込み管理クラス
   /// </summary>
   public class AssemblyLoader: IAssemblyLoader
   {
