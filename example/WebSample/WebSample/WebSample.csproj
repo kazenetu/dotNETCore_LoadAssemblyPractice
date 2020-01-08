@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Interface\Interface\Interface.csproj" />
-    <ProjectReference Include="..\..\..\LoadAssembly\LoadAssembly\LoadAssembly.csproj" />
+    <ProjectReference Include="..\Infrastructures\Infrastructures.csproj" />
   </ItemGroup>
 
 
