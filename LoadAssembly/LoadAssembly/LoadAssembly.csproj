@@ -7,8 +7,4 @@
     <StartupObject />
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Interface\Interface\Interface.csproj" />
-  </ItemGroup>
-
 </Project>
