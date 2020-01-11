@@ -10,7 +10,7 @@ namespace Infrastructures
   /// <summary>
   /// コンストラクタ付きアセンブリ管理クラス
   /// </summary>
-  public class DllLoader: AssemblyLoader
+  public class DllLoader: AssemblyLoader, IDllLoader
   {
     /// <summary>
     /// コンストラクタ
