@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Infrastructures;
 using Interface;
 using LoadAssembly;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +17,7 @@ namespace WebSample.Pages
 
     public ITestClass TestClass { private set; get; }
 
-    public IndexModel(ILogger<IndexModel> logger, IAssemblyLoader loader)
+    public IndexModel(ILogger<IndexModel> logger, IDllLoader loader)
     {
       _logger = logger;
       TestClass = loader.GetInterfaceInstance<ITestClass>();

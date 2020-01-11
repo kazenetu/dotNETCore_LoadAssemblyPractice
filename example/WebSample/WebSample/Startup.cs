@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Infrastructures;
-using LoadAssembly;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,7 +25,7 @@ namespace WebSample
     {
       services.AddRazorPages();
 
-      services.AddSingleton<IAssemblyLoader, DllLoader>();
+      services.AddSingleton<IDllLoader, DllLoader>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
