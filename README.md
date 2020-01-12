@@ -1,5 +1,4 @@
-# dotNETCore_LoadAssemblyPractice
-.NETCoreのdll動的読み込みの実装確認
+# .NETCoreのdll動的読み込みの実装確認
 
 ## ビルド方法
 * VisualStudio(2019以降)
